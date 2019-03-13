@@ -1,11 +1,18 @@
 @import url('https://fonts.googleapis.com/css?family=Open+Sans');
+@import url('https://fonts.googleapis.com/css?family=Noto+Sans+KR:700');
 
 :root {
-  --primary-color: grey;
+  /* --primary-color: grey;
   --secondary-color: darkblue;
   --primary-text-color: grey;
   --secondary-text-color: white;
-  --hover-text-color: lightgrey;
+  --hover-text-color: lightgrey; */
+
+  --color1: rgba(184, 216, 216, 1);
+  --color2: rgba(122, 158, 159, 1);
+  --color3: rgba(79, 99, 103, 1);
+  --color4: rgba(238, 245, 219, 1);
+  --color5: rgba(254, 95, 85, 1);
 }
 
 body {
@@ -14,25 +21,39 @@ body {
 
 a {
   text-decoration: none;
-  color: var(--secondary-text-color)
+  color: var(--color2)
 }
+
 a:hover {
-  color: var(--hover-text-color)
+  color: var(--color5)
 }
 
 h2, h4 {
-  color: var(--secondary-color);
+  color: var(--color2);
 }
 
-header > nav {
-  background-color: var(--primary-color);
-  color: var(--secondary-text-color);
-  padding: 1.5em;
+section { clear: both;}
+
+header nav {
+  background-color: var(--color2);
+  color: white;
+  padding: 0 1.5em;
+  height: 5em;
+}
+
+header nav ul {
+  display: inline-block;
+  list-style: none;
+  float: right;
+}
+
+header nav ul li a {
+  color: white;
 }
 
 /* This is the hero image */
 header > section {
-  background-image: url("https://images.unsplash.com/photo-1515524738708-327f6b0037a7?ixlib=rb-1.2.1&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=1000&h=300&fit=crop&ixid=eyJhcHBfaWQiOjF9");
+  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("https://images.unsplash.com/photo-1515524738708-327f6b0037a7?ixlib=rb-1.2.1&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=1000&h=300&fit=crop&ixid=eyJhcHBfaWQiOjF9");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -42,7 +63,31 @@ header > section {
   width: 100%;
 }
 
+header > section h1 {
+  color: white;
+  font-size: 2em;
+  font-family: 'Noto Sans KR';
+  word-break: keep-all;
+}
+
+header > section h1:first-child {
+  position: absolute;
+  top: 20%;
+  left: 30%;
+  transform: translate(-20%, -30%);
+}
+
+header > section h1:not(:first-child) {
+  position: absolute;
+  top: 60%;
+  left: 50%;
+  transform: translate(-60%, -50%);
+}
+
 main {
+  width: 80%;
+  max-width: 1000px;
+  margin: 0 auto;
   padding: 1.5em;
 }
 
@@ -50,9 +95,19 @@ main > section > article {
   float: left;
 }
 
-main > section > article i {
-  width: 20%;
+main > section > article > span {
+  display: block;
+  line-height: 3em;
+  font-weight: bolder;
+  text-align: center;
+  vertical-align: middle;
+  font-size: 1.5em;
+  width: 3em;
+  height: 3em;
   margin: 0 auto;
+  background-color: var(--color5);
+  color: white;
+  border-radius: 50%;
 }
 
 main > section > article h2 {
@@ -63,8 +118,10 @@ main > section > article p {
   padding: 0 20px;
 }
 
-
 main section:last-child {
   padding-top: 20px;
-  clear: both;
+}
+
+[class^="socicon-"] {
+  font-size: 2em;
 }
